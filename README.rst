@@ -4,15 +4,16 @@ django mini apps
 
 cdlibrary comprises a number of mini apps made with Django 1.7.
 
-File structure for apps are as follows:
+File structure for apps are as follows::
 
 cdlibrary_project/
-|-- cdlibrary
-    |-- cdlibrary
+|-- cdlibrary/
+    |-- cdlibrary/
     |-- manage.py 
-    |-- static *
-    |-- templates *
-    |-- pastebin
+    |-- static/ *
+    |-- templates/ *
+    |-- pastebin/
+
 *note: static & templates folders contains generic files which serve contents to cdlibrary 
 app only. All other apps DO NOT require these 2 folders.*
 
@@ -21,12 +22,12 @@ Requirements
 
 The following requirements are recommended for use with respective apps here:
 
-Django==1.5.1
-bpython==0.12
-django-braces==1.2.2
-django-model-utils==1.4.0
-logutils==0.3.3
-South==0.8.1
+- Django==1.5.1
+- bpython==0.12
+- django-braces==1.2.2
+- django-model-utils==1.4.0
+- logutils==0.3.3
+- South==0.8.1
 
 You may use pip installer to install the most recent version of these requirements, as such::
     $ pip install django
@@ -68,6 +69,7 @@ Views that the user will see are:
 Acknowledgements
 ================
 
+- Agiliq(http://agiliq.com/books/djenofdjango/) for providing valuable learning resources to django, in which this project is based upon.
 - Many thanks to my friends who had given me valuable advices.
 - All of the contributors_ to this project.
 
