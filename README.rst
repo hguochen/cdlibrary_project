@@ -1,104 +1,74 @@
 ========================
-django-twoscoops-project
+django mini apps
 ========================
 
-A project template for Django 1.5.
+cdlibrary comprises a number of mini apps made with Django 1.7.
 
-To use this project follow these steps:
+File structure for apps are as follows:
 
-#. Create your working environment
-#. Install Django
-#. Create the new project using the django-two-scoops template
-#. Install additional dependencies
-#. Use the Django admin to create the project
+cdlibrary_project/
+|-- cdlibrary
+    |-- cdlibrary
+    |-- manage.py 
+    |-- static *
+    |-- templates *
+    |-- pastebin
+*note: static & templates folders contains generic files which serve contents to cdlibrary 
+app only. All other apps DO NOT require these 2 folders.*
 
-*note: these instructions show creation of a project called "icecream".  You
-should replace this name with the actual name of your project.*
-
-Working Environment
+Requirements
 ===================
 
-You have several options in setting up your working environment.  We recommend
-using virtualenv to separate the dependencies of your project from your system's
-python environment.  If on Linux or Mac OS X, you can also use virtualenvwrapper to help manage multiple virtualenvs across different projects.
+The following requirements are recommended for use with respective apps here:
 
-Virtualenv Only
+Django==1.5.1
+bpython==0.12
+django-braces==1.2.2
+django-model-utils==1.4.0
+logutils==0.3.3
+South==0.8.1
+
+You may use pip installer to install the most recent version of these requirements, as such::
+    $ pip install django
+    $ pip install bpython
+    ...
+
+cdlibrary
 ---------------
 
-First, make sure you are using virtualenv (http://www.virtualenv.org). Once
-that's installed, create your virtualenv::
+cdlibrary is a simple storage structure for personal collection of CDs. cdlibrary has a simple database model that defines a CD class with the following attributes:
 
-    $ virtualenv --distribute icecream
+#. title
+#. description
+#. artist
+#. date
+#. genre
 
-You will also need to ensure that the virtualenv has the project directory
-added to the path. Adding the project directory will allow `django-admin.py` to
-be able to change settings using the `--settings` flag.
+You may use this storage idea to store other related things. Feel free to add/delete model attributes from the class to suit your needs.
 
-Virtualenv with virtualenvwrapper
---------------------------
-
-In Linux and Mac OSX, you can install virtualenvwrapper (http://virtualenvwrapper.readthedocs.org/en/latest/),
-which will take care of managing your virtual environments and adding the
-project path to the `site-directory` for you::
-
-    $ mkdir icecream
-    $ mkvirtualenv -a icecream icecream-dev
-    $ cd icecream && add2virtualenv `pwd`
-
-Windows
+pastebin
 ----------
 
-In Windows, or if you're not comfortable using the command line, you will need
-to add a `.pth` file to the `site-packages` of your virtualenv. If you have
-been following the book's example for the virtualenv directory (pg. 12), then
-you will need to add a python pathfile named `_virtualenv_path_extensions.pth`
-to the `site-packages`. If you have been following the book, then your
-virtualenv folder will be something like::
+Pastebin is a simple clipboard-like tool that allows users to paste, edit and view texts.
 
-`~/.virtualenvs/icecream/lib/python2.7/site-directory/`
+Pastebin app will be able to:
 
-In the pathfile, you will want to include the following code (from
-virtualenvwrapper):
+#. Allow users to paste some text
+#. Allow users to edit or delete the text
+#. Allow users to view all texts
+#. Clean up texts older than a day
 
-    import sys; sys.__plen = len(sys.path)
-    /home/<youruser>/icecream/icecream/
-    import sys; new=sys.path[sys.__plen:]; del sys.path[sys.__plen:]; p=getattr(sys,'__egginsert',0); sys.path[p:p]=new; sys.__egginsert = p+len(new)
+Views that the user will see are:
 
-Installing Django
-=================
-
-To install Django in the new virtual environment, run the following command::
-
-    $ pip install django
-
-Creating your project
-=====================
-
-To create a new Django project called '**icecream**' using
-django-twoscoops-project, run the following command::
-
-    $ django-admin.py startproject --template=https://github.com/twoscoops/django-twoscoops-project/archive/master.zip --extension=py,rst,html icecream
-
-Installation of Dependencies
-=============================
-
-Depending on where you are installing dependencies:
-
-In development::
-
-    $ pip install -r requirements/local.txt
-
-For production::
-
-    $ pip install -r requirements.txt
-
-*note: We install production requirements this way because many Platforms as a
-Services expect a requirements.txt file in the root of projects.*
+#. A list view of all recent texts
+#. A detail view of any selected text
+#. An entry/edit form for a text
+#. A view to delete a text
 
 Acknowledgements
 ================
 
-- Many thanks to Randall Degges for the inspiration to write the book and django-skel.
+- Many thanks to my friends who had given me valuable advices.
 - All of the contributors_ to this project.
 
-.. _contributors: https://github.com/twoscoops/django-twoscoops-project/blob/master/CONTRIBUTORS.txt
+.. _contributors: https://github.com/hguochen/cdlibrary_project.git

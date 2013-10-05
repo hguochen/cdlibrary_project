@@ -9,6 +9,7 @@ from admin import *
 
 urlpatterns = patterns('',
     url(r'^$', TemplateView.as_view(template_name='base.html')),
+    url(r'^pastebin/', include('pastebin.urls')),
 
     # Examples:
     # url(r'^$', 'cdlibrary.views.home', name='home'),
