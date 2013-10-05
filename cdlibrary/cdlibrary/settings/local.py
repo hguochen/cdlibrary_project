@@ -27,7 +27,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'cdlibrary',
-        'USER': '',
+        'USER': 'root',
         'PASSWORD': '',
         'HOST': '',
         'PORT': '',

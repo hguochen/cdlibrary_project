@@ -1,9 +1,11 @@
+# Std lib imports
+# Django imports
 from django.conf.urls import patterns, include, url
 from django.views.generic import TemplateView
 
-# Uncomment the next two lines to enable the admin:
-from django.contrib import admin
-admin.autodiscover()
+# 3rd party app imports
+# local imports
+from admin import *
 
 urlpatterns = patterns('',
     url(r'^$', TemplateView.as_view(template_name='base.html')),
