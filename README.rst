@@ -66,6 +66,37 @@ Views that the user will see are:
 #. An entry/edit form for a text
 #. A view to delete a text
 
+blog
+----------
+
+Blog is a implementation of typical blogs where users can create, edit, view entries and receive commentes. We allow anonymous to be able to comment on a post, we are not relating the comment poster to a registered user.
+
+Blog has the following features:
+
+#. Create/Edit blog post (restricted to admin)
+#. View blog post (public)
+#. Comment on a blog post (anonymous)
+#. Store anonymous user details in session
+#. Show month based blog archives
+#. Generate RSS feeds
+
+On the backend, the data we store are:
+
+For Post:
+#. Title
+#. Text Content
+#. Slug
+#. Created Date
+#. Author
+
+For Comment:
+#. Name
+#. Website
+#. Email
+#. Text Content
+#. Post related to this comment
+#. Created Date
+
 Acknowledgements
 ================
 
