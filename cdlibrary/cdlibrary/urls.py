@@ -2,7 +2,7 @@
 # Django imports
 from django.conf.urls import patterns, include, url
 from django.views.generic import TemplateView
-from django.contrib.auth.views import login
+
 # 3rd party app imports
 # local imports
 from admin import *
@@ -11,8 +11,8 @@ from admin import *
 urlpatterns = patterns('',
     url(r'^$', TemplateView.as_view(template_name='base.html')),
     url(r'^pastebin/', include('pastebin.urls')),
-    url(r'^accounts/login/$', login),
     url(r'^blog/', include('blog.urls')),
+    url(r'^accounts/', include('registration.backends.default.urls')),
     # Examples:
     # url(r'^$', 'cdlibrary.views.home', name='home'),
     # url(r'^cdlibrary/', include('cdlibrary.foo.urls')),

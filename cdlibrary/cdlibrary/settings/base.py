@@ -1,10 +1,13 @@
 """Common settings and globals."""
-
-
+# Std lib imports
 from os.path import abspath, basename, dirname, join, normpath
 from sys import path
 
+# Django imports
+# 3rd party app imports
+# local imports
 from passwd import PROJECT_SECRET_KEY
+
 
 ########## PATH CONFIGURATION
 # Absolute filesystem path to the Django project directory:
@@ -196,13 +199,15 @@ DJANGO_APPS = (
 THIRD_PARTY_APPS = (
     # Database migration helpers:
     # 'south',
+    'registration',
 )
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
     'cdlibrary',
     'pastebin',
-    'blog',
+    'blog',    
+    'wiki',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -247,3 +252,9 @@ LOGGING = {
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
 WSGI_APPLICATION = '%s.wsgi.application' % SITE_NAME
 ########## END WSGI CONFIGURATION
+
+########## THIRD PARTY SETTINGS
+# registration settings
+ACCOUNT_ACTIVATION_DAYS = 7
+
+########## END THIRD PARTY SETTINGS

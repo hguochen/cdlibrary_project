@@ -34,7 +34,7 @@ You may use pip installer to install the most recent version of these requiremen
     $ pip install bpython
     ...
 
-cdlibrary
+Cdlibrary
 ---------------
 
 cdlibrary is a simple storage structure for personal collection of CDs. cdlibrary has a simple database model that defines a CD class with the following attributes:
@@ -47,7 +47,7 @@ cdlibrary is a simple storage structure for personal collection of CDs. cdlibrar
 
 You may use this storage idea to store other related things. Feel free to add/delete model attributes from the class to suit your needs.
 
-pastebin
+Pastebin
 ----------
 
 Pastebin is a simple clipboard-like tool that allows users to paste, edit and view texts.
@@ -66,7 +66,7 @@ Views that the user will see are:
 #. An entry/edit form for a text
 #. A view to delete a text
 
-blog
+Blog
 ----------
 
 Blog is a implementation of typical blogs where users can create, edit, view entries and receive commentes. We allow anonymous to be able to comment on a post, we are not relating the comment poster to a registered user.
@@ -96,6 +96,23 @@ For Comment:
 #. Text Content
 #. Post related to this comment
 #. Created Date
+
+Wiki
+----------
+
+Wiki app allows user to register and interface with article managements(CRUD) and ReST support. User may revise articles. All articles has a revision history.
+
+Features:
+
+#. User registration
+#. Article Management(CRUD) with ReST support
+#. Audit trail for articles
+#. Revision history
+
+3rd party Apps:
+
+#. django-registration(http://bitbucket.org/ubernostrum/django-registration/)
+
 
 Acknowledgements
 ================

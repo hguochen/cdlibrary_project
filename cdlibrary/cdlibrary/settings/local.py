@@ -1,9 +1,12 @@
 """Development settings and globals."""
-
-
+# Std lib imports
 from os.path import join, normpath
 
+# Django imports
+# 3rd party app imports
+# local imports
 from base import *
+from passwd import EMAIL_ID, EMAIL_PASSWD
 
 
 ########## DEBUG CONFIGURATION
@@ -14,10 +17,14 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 ########## END DEBUG CONFIGURATION
 
-
 ########## EMAIL CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = EMAIL_ID
+EMAIL_HOST_PASSWORD = EMAIL_PASSWD
+EMAIL_PORT = 587
 ########## END EMAIL CONFIGURATION
 
 

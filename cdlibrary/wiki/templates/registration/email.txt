@@ -1,0 +1,9 @@
+Hi!,
+
+{% block body %}
+{% endblock %}
+
+Regards,
+Admin
+
+Note: This is an auto-generated mail, please don't reply.
